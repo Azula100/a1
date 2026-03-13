@@ -86,7 +86,7 @@ Router → Switch → PC1 / PC2
     }
     const loader = new GLTFLoader();
     loader.load(
-    "./lab4.glb",
+    "./lab2.glb",
     function(gltf){
     const model = gltf.scene;
     const box = new THREE.Box3().setFromObject(model);
@@ -97,29 +97,29 @@ Router → Switch → PC1 / PC2
     model.position.z -= center.z;
     scene.add(model);
     console.log("Model loaded");
-    /* -------- төхөөрөмжүүдийг авах -------- */
-    const router = model.getObjectByName("router");
-    const switch1 = model.getObjectByName("switch");
-    const pc1 = model.getObjectByName("pc1");
-    const pc2 = model.getObjectByName("pc2");
-    if(!router || !switch1 || !pc1 || !pc2){console.warn("Object name Blender дээр шалга");return;}
+    // /* -------- төхөөрөмжүүдийг авах -------- */
+    // const router = model.getObjectByName("router");
+    // const switch1 = model.getObjectByName("switch");
+    // const pc1 = model.getObjectByName("pc1");
+    // const pc2 = model.getObjectByName("pc2");
+    // if(!router || !switch1 || !pc1 || !pc2){console.warn("Object name Blender дээр шалга");return;}
 
-    /* -------- Router → Switch -------- */
-    const r = new THREE.Vector3();
-    const s = new THREE.Vector3();
-    router.getWorldPosition(r);
-    switch1.getWorldPosition(s);
-    createCable(r,s,0xff0000);
+    // /* -------- Router → Switch -------- */
+    // const r = new THREE.Vector3();
+    // const s = new THREE.Vector3();
+    // router.getWorldPosition(r);
+    // switch1.getWorldPosition(s);
+    // createCable(r,s,0xff0000);
 
-    /* -------- Switch → PC1 -------- */
-    const p1 = new THREE.Vector3();
-    pc1.getWorldPosition(p1);
-    createCable(s,p1,0x00ff00);
+    // /* -------- Switch → PC1 -------- */
+    // const p1 = new THREE.Vector3();
+    // pc1.getWorldPosition(p1);
+    // createCable(s,p1,0x00ff00);
 
-    /* -------- Switch → PC2 -------- */
-    const p2 = new THREE.Vector3();
-    pc2.getWorldPosition(p2);
-    createCable(s,p2,0x00ff00);
+    // /* -------- Switch → PC2 -------- */
+    // const p2 = new THREE.Vector3();
+    // pc2.getWorldPosition(p2);
+    // createCable(s,p2,0x00ff00);
     },
     undefined,
     function(error){
@@ -137,4 +137,5 @@ Router → Switch → PC1 / PC2
     });
 </script>
 </body>
+
 </html>
