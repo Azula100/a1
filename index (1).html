@@ -1297,7 +1297,7 @@ txLoader.load('./image1.jpg', tex => {
 
 // ── GLB LOAD ──
 const loader = new GLTFLoader();
-loader.load('./lab4.glb', gltf => {
+loader.load('./lab2.glb', gltf => {
   const model = gltf.scene;
   const box = new THREE.Box3().setFromObject(model);
   const center = new THREE.Vector3(); box.getCenter(center);
